@@ -18,11 +18,11 @@ spec:
       labels:
         app: gateway
     spec:
-      container:
+        containers:
         - name: gateway
-          image: mihailgaberov/gateway:latest
-          envForm:
+          image: sweasytech/gateway
+          envFrom:
             - configMapRef:
-              name: gateway-configmap
+                name: gateway-configmap
             - secretRef:
-              name: gateway-secret
+                name: gateway-secret
